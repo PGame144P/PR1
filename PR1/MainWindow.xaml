@@ -1,0 +1,48 @@
+﻿<Window x:Class="PR1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name= "LayoutRoot" Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="textBlock" Grid.Column ="0" Grid.ColumnSpan="4"/>
+        <Button Grid.Column="0" Name="One" Grid.Row="1" FontSize="30" Click="Button_Click">1</Button>
+        <Button Grid.Column="1" Name="Two" Grid.Row="1" FontSize="30" Click="Button_Click_1">2</Button>
+        <Button Grid.Column="2" Name="Tree" Grid.Row="1" FontSize="30" Click="Tree_Click">3</Button>
+
+        <Button Grid.Column="0" Name="Four" Grid.Row="2" FontSize="30" Click="Four_Click">4</Button>
+        <Button Grid.Column="1" Name="Five" Grid.Row="2" FontSize="30" Click="Five_Click">5</Button>
+        <Button Grid.Column="2" Name="Six" Grid.Row="2" FontSize="30" Click="Six_Click">6</Button>
+
+        <Button Grid.Column="0" Name="Seven" Grid.Row="3" FontSize="30" Click="Seven_Click">7</Button>
+        <Button Grid.Column="1" Name="Eigth" Grid.Row="3" FontSize="30" Click="Eigth_Click">8</Button>
+        <Button Grid.Column="2" Name="Nine" Grid.Row="3" FontSize="30" Click="Nine_Click" >9</Button>
+
+        <Button Grid.Column="0" Name="Plus" Grid.Row="4" FontSize="30">+</Button>
+        <Button Grid.Column="1" Name="Zero" Grid.Row="4" FontSize="30">0</Button>
+        <Button Grid.Column="2" Name="Equals"  Grid.Row="4" FontSize="30">=</Button>
+
+        <Button Grid.Column="3" Name="Multiply" Grid.Row="1" FontSize="30">*</Button>
+        <Button Grid.Column="3" Name="Division" Grid.Row="2" FontSize="30">/</Button>
+        <Button Grid.Column="3" Name="Aphotsr" Grid.Row="3" FontSize="30">,</Button>
+        <Button Grid.Column="3" Name="clear" Grid.Row="4" FontSize="20" Click="clear_Click">CLEAR</Button>
+
+    </Grid>
+</Window>
