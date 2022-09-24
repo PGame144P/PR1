@@ -16,33 +16,34 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="textBlock" Grid.Column ="0" Grid.ColumnSpan="4"/>
-        <Button Grid.Column="0" Name="One" Grid.Row="1" FontSize="30" Click="Button_Click">1</Button>
-        <Button Grid.Column="1" Name="Two" Grid.Row="1" FontSize="30" Click="Button_Click_1">2</Button>
-        <Button Grid.Column="2" Name="Tree" Grid.Row="1" FontSize="30" Click="Tree_Click">3</Button>
+        <TextBlock x:Name="textBlock" Grid.Column ="0" Grid.ColumnSpan="5" Margin="0,0,0,87" Grid.RowSpan="2"/>
+        <Button Grid.Column="0" Name="One" Grid.Row="1" FontSize="30" Grid.ColumnSpan="2" Margin="0,0,0,86" Grid.RowSpan="2">1</Button>
+        <Button Grid.Column="2" Name="Two" Grid.Row="1" FontSize="30" Margin="0,0,0,86" Grid.RowSpan="2">2</Button>
+        <Button Grid.Column="3" Name="Tree" Grid.Row="1" FontSize="30" Margin="0,0,0,86" Grid.RowSpan="2">3</Button>
 
-        <Button Grid.Column="0" Name="Four" Grid.Row="2" FontSize="30" Click="Four_Click">4</Button>
-        <Button Grid.Column="1" Name="Five" Grid.Row="2" FontSize="30" Click="Five_Click">5</Button>
-        <Button Grid.Column="2" Name="Six" Grid.Row="2" FontSize="30" Click="Six_Click">6</Button>
+        <Button Grid.Column="0" Name="Four" Grid.Row="2" FontSize="30"  Grid.ColumnSpan="2">4</Button>
+        <Button Grid.Column="2" Name="Five" Grid.Row="2" FontSize="30">5</Button>
+        <Button Grid.Column="3" Name="Six" Grid.Row="2" FontSize="30">6</Button>
 
-        <Button Grid.Column="0" Name="Seven" Grid.Row="3" FontSize="30" Click="Seven_Click">7</Button>
-        <Button Grid.Column="1" Name="Eigth" Grid.Row="3" FontSize="30" Click="Eigth_Click">8</Button>
-        <Button Grid.Column="2" Name="Nine" Grid.Row="3" FontSize="30" Click="Nine_Click" >9</Button>
+        <Button Grid.Column="0" Name="Seven" Grid.Row="2" FontSize="30" Grid.ColumnSpan="2" Margin="0,86,0,0" Grid.RowSpan="2">7</Button>
+        <Button Grid.Column="2" Name="Eigth" Grid.Row="2" FontSize="30" Margin="0,86,0,0" Grid.RowSpan="2">8</Button>
+        <Button Grid.Column="3" Name="Nine" Grid.Row="2" FontSize="30"  Margin="0,86,0,0" Grid.RowSpan="2" >9</Button>
 
-        <Button Grid.Column="0" Name="Plus" Grid.Row="4" FontSize="30">+</Button>
-        <Button Grid.Column="1" Name="Zero" Grid.Row="4" FontSize="30">0</Button>
-        <Button Grid.Column="2" Name="Equals"  Grid.Row="4" FontSize="30">=</Button>
+        <Button Grid.Column="0" Name="Pluses" Grid.Row="3" FontSize="30" Grid.ColumnSpan="2" Margin="0,87,0,0" Grid.RowSpan="2">+</Button>
+        <Button Grid.Column="2" Name="Zeros" Grid.Row="3" FontSize="30"  Margin="0,87,0,0" Grid.RowSpan="2">0</Button>
+        <Button Grid.Column="3" Name="Equals"  Grid.Row="3" FontSize="30" Margin="0,87,0,0" Grid.RowSpan="2">=</Button>
 
-        <Button Grid.Column="3" Name="Multiply" Grid.Row="1" FontSize="30">*</Button>
-        <Button Grid.Column="3" Name="Division" Grid.Row="2" FontSize="30">/</Button>
-        <Button Grid.Column="3" Name="Aphotsr" Grid.Row="3" FontSize="30">,</Button>
-        <Button Grid.Column="3" Name="clear" Grid.Row="4" FontSize="20" Click="clear_Click">CLEAR</Button>
+        <Button Grid.Column="4" Name="Multiply" Grid.Row="1" FontSize="30" Margin="0,0,0,86" Grid.RowSpan="2">*</Button>
+        <Button Grid.Column="4" Name="Division" Grid.Row="2" FontSize="30">/</Button>
+        <Button Grid.Column="4" Name="Aphotsr" Grid.Row="2" FontSize="30" Margin="0,86,0,0" Grid.RowSpan="2">,</Button>
+        <Button Grid.Column="4" Name="clear" Grid.Row="3" FontSize="20" Click="clear_Click" Margin="0,87,0,0" Grid.RowSpan="2">CLEAR</Button>
 
     </Grid>
 </Window>

@@ -20,59 +20,105 @@ namespace PR1
     /// </summary>
     public partial class MainWindow : Window
     {
+        string leftop = ""; // Левый операнд
+        string operation = ""; // Знак операции
+        string rightop = ""; // Правый операнд
+
         public MainWindow()
         {
+            int counter  = 0;
             InitializeComponent();
+            foreach (UIElement c in LayoutRoot.Children)
+            {
+                if (c is Button)
+                {
+                    counter++;
+                        ((Button)c).Click += Equals_Click;
+                }
+            }
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void clear_Click(object sender, RoutedEventArgs e) 
         {
-            var fitsts = textBlock.Text += One.Content;
+            textBlock.Text = String.Empty;
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Equals_Click(object sender, RoutedEventArgs e)
         {
-            var Twos = textBlock.Text += Two.Content;
+            // Получаем текст кнопки
+            string s = (string)((Button)e.OriginalSource).Content;
+            // Добавляем его в текстовое поле
+            textBlock.Text += s;
+            int num;
+            // Пытаемся преобразовать его в число
+            bool result = Int32.TryParse(s, out num);
+            // Если текст - это число
+            if (result == true)
+            {
+                // Если операция не задана
+                if (operation == "")
+                {
+                    // Добавляем к левому операнду
+                    leftop += s;
+                }
+                else
+                {
+                    // Иначе к правому операнду
+                    rightop += s;
+                }
+            }
+            // Если было введено не число
+            else
+            {
+                // Если равно, то выводим результат операции
+                if (s == "=")
+                {
+                    Update_RightOp();
+                    textBlock.Text += rightop;
+                    operation = "";
+                }
+                // Очищаем поле и переменные
+                else if (s == "CLEAR")
+                {
+                    leftop = "";
+                    rightop = "";
+                    operation = "";
+                   textBlock.Text = "";
+                }
+                // Получаем операцию
+                else
+                {
+                    // Если правый операнд уже имеется, то присваиваем его значение левому
+                    // операнду, а правый операнд очищаем
+                    if (rightop != "")
+                    {
+                        Update_RightOp();
+                        leftop = rightop;
+                        rightop = "";
+                    }
+                    operation = s;
+                }
+            }
         }
-
-        private void Tree_Click(object sender, RoutedEventArgs e)
+        // Обновляем значение правого операнда
+        private void Update_RightOp()
         {
-            var Trees = textBlock.Text += Tree.Content;
-        }
-
-        private void Four_Click(object sender, RoutedEventArgs e)
-        {
-            var Fours = textBlock.Text += Four.Content;
-        }
-
-        private void Five_Click(object sender, RoutedEventArgs e)
-        {
-            var Fives = textBlock.Text += Five.Content;
-        }
-
-        private void Six_Click(object sender, RoutedEventArgs e)
-        {
-            var Sixs = textBlock.Text += Six.Content;
-        }
-
-        private void Seven_Click(object sender, RoutedEventArgs e)
-        {
-            var Sevens = textBlock.Text += Seven.Content;
-        }
-
-        private void Eigth_Click(object sender, RoutedEventArgs e)
-        {
-            var Eigths = textBlock.Text += Eigth.Content;
-        }
-
-        private void Nine_Click(object sender, RoutedEventArgs e)
-        {
-            var Nines = textBlock.Text += Nine.Content;
-        }
-
-        private void clear_Click(object sender, RoutedEventArgs e)
-        {
-            textBlock.Text  = String.Empty;
+            int num1 = Int32.Parse(leftop);
+            int num2 = Int32.Parse(rightop);
+            // И выполняем операцию
+            switch (operation)
+            {
+                case "+":
+                    rightop = (num1 + num2).ToString();
+                    break;
+                case "-":
+                    rightop = (num1 - num2).ToString();
+                    break;
+                case "*":
+                    rightop = (num1 * num2).ToString();
+                    break;
+                case "/":
+                    rightop = (num1 / num2).ToString();
+                    break;
+            }  
         }
     }
 }
